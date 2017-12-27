@@ -9,213 +9,288 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   background: transparent;
 }
 
-$animationSpeedMain: 5s;
-.main {
-  width: 80%;
-  max-width: 250px;
-  height: 60%;
-  max-height: 250px;
-  border-radius: 7px;
-  background-color: #041541;
-  position: relative;
-  overflow: hidden;
+.container {
+  width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;
+  flex-direction: column;
 
-  -webkit-animation: example $animationSpeedMain linear infinite alternate;
-  -moz-animation: example $animationSpeedMain linear infinite alternate;
-  -ms-animation: example $animationSpeedMain linear infinite alternate;
-  -o-animation: example $animationSpeedMain linear infinite alternate;
-  animation: example $animationSpeedMain linear infinite alternate; /* this comes last */
-
-  $oceanNight: #001c3c;
-  $oceanDay: #0da5ce;
-  .ocean {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background-color: $oceanNight;
-
-    -webkit-animation: oceancolor $animationSpeedMain linear infinite alternate;
-    -moz-animation: oceancolor $animationSpeedMain linear infinite alternate;
-    -ms-animation: oceancolor $animationSpeedMain linear infinite alternate;
-    -o-animation: oceancolor $animationSpeedMain linear infinite alternate;
-    animation: oceancolor $animationSpeedMain linear infinite alternate; /* this comes last */
+  .message {
+    display: flex; justify-content: center; align-items: center; width: 255px; height: 3em; font-size: 1.2em; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   }
 
-  /* Safari 4.0 - 8.0 */
-  @-webkit-keyframes oceancolor {
-    from { background-color: $oceanNight; }
-    to { background-color: $oceanDay; }
-  }
-  /* Standard syntax */
-  @keyframes oceancolor {
-    from { background-color: $oceanNight; }
-    to { background-color: $oceanDay; }
+  .icon-container {
+    display: flex; justify-content: center; align-items: center; width: 255px; height: 3em;
+    .icon-image {
+      height: 3em;
+    }
   }
 
-  $moonOriginTop: 18px;
-  $moonOriginLeft: 18px;
-  $moonSize: 47px;
-  .moon-left {
-    position: absolute;
-    top: $moonOriginTop;
-    left: $moonOriginLeft;
-    width: $moonSize;
-    height: $moonSize;
-    border-radius: 50%;
-    background-color: #deb2db;
-    -webkit-animation: wobble $animationSpeedMain linear infinite alternate;
-    -moz-animation: wobble $animationSpeedMain linear infinite alternate;
-    -ms-animation: wobble $animationSpeedMain linear infinite alternate;
-    -o-animation: wobble $animationSpeedMain linear infinite alternate;
-    animation: wobble $animationSpeedMain linear infinite alternate; /* this comes last */
-  }
-
-  .moon-right {
-    position: absolute;
-    top: $moonOriginTop;
-    left: $moonOriginLeft + 20px;
-    width: $moonSize;
-    height: $moonSize;
-    border-radius: 50%;
+  $animationSpeedMain: 6.5s;
+  .main {
+    width: 80%;
+    max-width: 260px;
+    height: 60%;
+    max-height: 260px;
+    border-radius: 7px;
     background-color: #041541;
+    position: relative;
+    overflow: hidden;
+
     -webkit-animation: example $animationSpeedMain linear infinite alternate;
     -moz-animation: example $animationSpeedMain linear infinite alternate;
     -ms-animation: example $animationSpeedMain linear infinite alternate;
     -o-animation: example $animationSpeedMain linear infinite alternate;
     animation: example $animationSpeedMain linear infinite alternate; /* this comes last */
+
+    $oceanNight: #001c3c;
+    $oceanDay: #0da5ce;
+    .ocean {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 120%;
+      height: 40%;
+      background-color: $oceanNight;
+
+      -webkit-animation: oceancolor $animationSpeedMain linear infinite alternate;
+      -moz-animation: oceancolor $animationSpeedMain linear infinite alternate;
+      -ms-animation: oceancolor $animationSpeedMain linear infinite alternate;
+      -o-animation: oceancolor $animationSpeedMain linear infinite alternate;
+      animation: oceancolor $animationSpeedMain linear infinite alternate; /* this comes last */
+
+      .ocean-shift {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        $waveSpeed: 3s;
+        -webkit-animation: oceanShift $waveSpeed linear infinite alternate;
+        -moz-animation: oceanShift $waveSpeed linear infinite alternate;
+        -ms-animation: oceanShift $waveSpeed linear infinite alternate;
+        -o-animation: oceanShift $waveSpeed linear infinite alternate;
+        animation: oceanShift $waveSpeed linear infinite alternate; /* this comes last */
+
+        $waveWidth: 40px;
+        $wave1left: 5%;
+        $wave2left: 12%;
+        $wave3left: 27%;
+        $wave4left: 31%;
+        $wave5left: 55%;
+        $wave6left: 75%;
+        $wave7left: 88%;
+        .wave {
+          position: absolute;
+          width: $waveWidth;
+          opacity: 0.2;
+        }
+        .wave-1 { bottom: 67%; left: $wave1left; }
+        .wave-2 { bottom: 11%; left: $wave2left; }
+        .wave-3 { bottom: 41%; left: $wave3left; }
+        .wave-4 { bottom: 61%; left: $wave4left; }
+        .wave-5 { bottom: 22%; left: $wave5left; }
+        .wave-6 { bottom: 55%; left: $wave6left; }
+        .wave-7 { bottom: 37%; left: $wave7left; }
+      }
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes oceanShift {
+      from { left: 0; }
+      to { left: -10%; }
+    }
+    /* Standard syntax */
+    @keyframes oceanShift {
+      from { left: 0; }
+      to { left: -20%; }
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes oceancolor {
+      from { background-color: $oceanNight; }
+      to { background-color: $oceanDay; }
+    }
+    /* Standard syntax */
+    @keyframes oceancolor {
+      from { background-color: $oceanNight; }
+      to { background-color: $oceanDay; }
+    }
+
+    $moonOriginTop: 18px;
+    $moonOriginLeft: 18px;
+    $moonSize: 47px;
+    .moon-left {
+      position: absolute;
+      top: $moonOriginTop;
+      left: $moonOriginLeft;
+      width: $moonSize;
+      height: $moonSize;
+      border-radius: 50%;
+      background-color: #deb2db;
+      -webkit-animation: wobble $animationSpeedMain linear infinite alternate;
+      -moz-animation: wobble $animationSpeedMain linear infinite alternate;
+      -ms-animation: wobble $animationSpeedMain linear infinite alternate;
+      -o-animation: wobble $animationSpeedMain linear infinite alternate;
+      animation: wobble $animationSpeedMain linear infinite alternate; /* this comes last */
+    }
+
+    .moon-right {
+      position: absolute;
+      top: $moonOriginTop;
+      left: $moonOriginLeft + 20px;
+      width: $moonSize;
+      height: $moonSize;
+      border-radius: 50%;
+      background-color: #041541;
+      -webkit-animation: example $animationSpeedMain linear infinite alternate;
+      -moz-animation: example $animationSpeedMain linear infinite alternate;
+      -ms-animation: example $animationSpeedMain linear infinite alternate;
+      -o-animation: example $animationSpeedMain linear infinite alternate;
+      animation: example $animationSpeedMain linear infinite alternate; /* this comes last */
+    }
+
+    .moon-right-disappear {
+      -webkit-animation: disappear $animationSpeedMain linear infinite alternate;
+      -moz-animation: disappear $animationSpeedMain linear infinite alternate;
+      -ms-animation: disappear $animationSpeedMain linear infinite alternate;
+      -o-animation: disappear $animationSpeedMain linear infinite alternate;
+      animation: disappear $animationSpeedMain linear infinite alternate; /* this comes last */
+    }
+
+    $starSize: 5px;
+    $starColor: #fcf091;
+
+    $star1top: 20px;
+    $star1right: 20px;
+
+    $star2top: 35px;
+    $star2right: 56px;
+
+    $star3top: 50px;
+    $star3right: 40px;
+
+    $star4top: 40px;
+    $star4right: 100px;
+
+    $star5top: 70px;
+    $star5right: 96px;
+
+    $star6top: 60px;
+    $star6right: 120px;
+
+    $star7top: 86px;
+    $star7right: 140px;
+
+    $star8top: 55px;
+    $star8right: 157px;
+
+    $star9top: 100px;
+    $star9right: 100px;
+
+    .star {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: $starSize solid transparent;
+      border-right: $starSize solid transparent;
+    }
+
+    .star-1-up { top: $star1top; right: $star1right; border-bottom: $starSize*2 solid $starColor; }
+    .star-1-down { top: $star1top + 2.5px; right: $star1right; border-top: $starSize*2 solid $starColor; }
+
+    .star-2-up { top: $star2top; right: $star2right; border-bottom: $starSize*2 solid $starColor; }
+    .star-2-down { top: $star2top + 2.5px; right: $star2right; border-top: $starSize*2 solid $starColor; }
+
+    .star-3-up { top: $star3top; right: $star3right; border-bottom: $starSize*2 solid $starColor; }
+    .star-3-down { top: $star3top + 2.5px; right: $star3right; border-top: $starSize*2 solid $starColor; }
+
+    .star-4-up { top: $star4top; right: $star4right; border-bottom: $starSize*2 solid $starColor; }
+    .star-4-down { top: $star4top + 2.5px; right: $star4right; border-top: $starSize*2 solid $starColor; }
+
+    .star-5-up { top: $star5top; right: $star5right; border-bottom: $starSize*2 solid $starColor; }
+    .star-5-down { top: $star5top + 2.5px; right: $star5right; border-top: $starSize*2 solid $starColor; }
+
+    .star-6-up { top: $star6top; right: $star6right; border-bottom: $starSize*2 solid $starColor; }
+    .star-6-down { top: $star6top + 2.5px; right: $star6right; border-top: $starSize*2 solid $starColor; }
+
+    .star-7-up { top: $star7top; right: $star7right; border-bottom: $starSize*2 solid $starColor; }
+    .star-7-down { top: $star7top + 2.5px; right: $star7right; border-top: $starSize*2 solid $starColor; }
+
+    .star-8-up { top: $star8top; right: $star8right; border-bottom: $starSize*2 solid $starColor; }
+    .star-8-down { top: $star8top + 2.5px; right: $star8right; border-top: $starSize*2 solid $starColor; }
+
+    .star-9-up { top: $star9top; right: $star9right; border-bottom: $starSize*2 solid $starColor; }
+    .star-9-down { top: $star9top + 2.5px; right: $star9right; border-top: $starSize*2 solid $starColor; }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes starfadeup {
+      from { border-bottom: 10px solid $starColor; }
+      to { border-bottom: 0px solid transparent; }
+    }
+    /* Standard syntax */
+    @keyframes starfadeup {
+      from { border-bottom: 10px solid $starColor; }
+      to { border-bottom: 0px solid transparent; }
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes starfadedown {
+      from { border-top: 10px solid $starColor; }
+      to { border-top: 0px solid transparent; }
+    }
+    /* Standard syntax */
+    @keyframes starfadedown {
+      from { border-top: 10px solid $starColor; }
+      to { border-top: 0px solid transparent; }
+    }
+
+    .starfadeup {
+      -webkit-animation: starfadeup $animationSpeedMain linear infinite alternate;
+      -moz-animation: starfadeup $animationSpeedMain linear infinite alternate;
+      -ms-animation: starfadeup $animationSpeedMain linear infinite alternate;
+      -o-animation: starfadeup $animationSpeedMain linear infinite alternate;
+      animation: starfadeup $animationSpeedMain linear infinite alternate; /* this comes last */
+    }
+
+    .starfadedown {
+      -webkit-animation: starfadedown $animationSpeedMain linear infinite alternate;
+      -moz-animation: starfadedown $animationSpeedMain linear infinite alternate;
+      -ms-animation: starfadedown $animationSpeedMain linear infinite alternate;
+      -o-animation: starfadedown $animationSpeedMain linear infinite alternate;
+      animation: starfadedown $animationSpeedMain linear infinite alternate; /* this comes last */
+    }
   }
-
-  .moon-right-disappear {
-    -webkit-animation: disappear $animationSpeedMain linear infinite alternate;
-    -moz-animation: disappear $animationSpeedMain linear infinite alternate;
-    -ms-animation: disappear $animationSpeedMain linear infinite alternate;
-    -o-animation: disappear $animationSpeedMain linear infinite alternate;
-    animation: disappear $animationSpeedMain linear infinite alternate; /* this comes last */
-  }
-
-  $starSize: 5px;
-  $starColor: #fcf091;
-
-  $star1top: 20px;
-  $star1right: 20px;
-
-  $star2top: 35px;
-  $star2right: 56px;
-
-  $star3top: 50px;
-  $star3right: 40px;
-
-  $star4top: 40px;
-  $star4right: 100px;
-
-  $star5top: 70px;
-  $star5right: 96px;
-
-  $star6top: 60px;
-  $star6right: 120px;
-
-  $star7top: 86px;
-  $star7right: 140px;
-
-  .star {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: $starSize solid transparent;
-    border-right: $starSize solid transparent;
-  }
-
-  .star-1-up { top: $star1top; right: $star1right; border-bottom: $starSize*2 solid $starColor; }
-  .star-1-down { top: $star1top + 2.5px; right: $star1right; border-top: $starSize*2 solid $starColor; }
-
-  .star-2-up { top: $star2top; right: $star2right; border-bottom: $starSize*2 solid $starColor; }
-  .star-2-down { top: $star2top + 2.5px; right: $star2right; border-top: $starSize*2 solid $starColor; }
-
-  .star-3-up { top: $star3top; right: $star3right; border-bottom: $starSize*2 solid $starColor; }
-  .star-3-down { top: $star3top + 2.5px; right: $star3right; border-top: $starSize*2 solid $starColor; }
-
-  .star-4-up { top: $star4top; right: $star4right; border-bottom: $starSize*2 solid $starColor; }
-  .star-4-down { top: $star4top + 2.5px; right: $star4right; border-top: $starSize*2 solid $starColor; }
-
-  .star-5-up { top: $star5top; right: $star5right; border-bottom: $starSize*2 solid $starColor; }
-  .star-5-down { top: $star5top + 2.5px; right: $star5right; border-top: $starSize*2 solid $starColor; }
-
-  .star-6-up { top: $star6top; right: $star6right; border-bottom: $starSize*2 solid $starColor; }
-  .star-6-down { top: $star6top + 2.5px; right: $star6right; border-top: $starSize*2 solid $starColor; }
-
-  .star-7-up { top: $star7top; right: $star7right; border-bottom: $starSize*2 solid $starColor; }
-  .star-7-down { top: $star7top + 2.5px; right: $star7right; border-top: $starSize*2 solid $starColor; }
 
   /* Safari 4.0 - 8.0 */
-  @-webkit-keyframes starfadeup {
-    from { border-bottom: 10px solid $starColor; }
-    to { border-bottom: 0px solid transparent; }
+  @-webkit-keyframes example {
+    from { background-color: #041541; }
+    to { background-color: #cfecf7; }
   }
   /* Standard syntax */
-  @keyframes starfadeup {
-    from { border-bottom: 10px solid $starColor; }
-    to { border-bottom: 0px solid transparent; }
+  @keyframes example {
+    from { background-color: #041541; }
+    to { background-color: #cfecf7; }
   }
 
   /* Safari 4.0 - 8.0 */
-  @-webkit-keyframes starfadedown {
-    from { border-top: 10px solid $starColor; }
-    to { border-top: 0px solid transparent; }
+  @-webkit-keyframes wobble {
+    from { background-color: #deb2db; }
+    to { background-color: #fcf091; }
   }
   /* Standard syntax */
-  @keyframes starfadedown {
-    from { border-top: 10px solid $starColor; }
-    to { border-top: 0px solid transparent; }
+  @keyframes wobble {
+    from { background-color: #deb2db; }
+    to { background-color: #fcf091; }
   }
 
-  .starfadeup {
-    -webkit-animation: starfadeup $animationSpeedMain linear infinite alternate;
-    -moz-animation: starfadeup $animationSpeedMain linear infinite alternate;
-    -ms-animation: starfadeup $animationSpeedMain linear infinite alternate;
-    -o-animation: starfadeup $animationSpeedMain linear infinite alternate;
-    animation: starfadeup $animationSpeedMain linear infinite alternate; /* this comes last */
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes disappear {
+    from { opacity: 1; background-color: #041541; }
+    to { opacity: 0; background-color: #cfecf7; }
   }
-
-  .starfadedown {
-    -webkit-animation: starfadedown $animationSpeedMain linear infinite alternate;
-    -moz-animation: starfadedown $animationSpeedMain linear infinite alternate;
-    -ms-animation: starfadedown $animationSpeedMain linear infinite alternate;
-    -o-animation: starfadedown $animationSpeedMain linear infinite alternate;
-    animation: starfadedown $animationSpeedMain linear infinite alternate; /* this comes last */
+  /* Standard syntax */
+  @keyframes disappear {
+    from { opacity: 1; background-color: #041541; }
+    to { opacity: 0; background-color: #cfecf7; }
   }
-}
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes example {
-  from { background-color: #041541; }
-  to { background-color: #cfecf7; }
-}
-/* Standard syntax */
-@keyframes example {
-  from { background-color: #041541; }
-  to { background-color: #cfecf7; }
-}
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes wobble {
-  from { background-color: #deb2db; }
-  to { background-color: #fcf091; }
-}
-/* Standard syntax */
-@keyframes wobble {
-  from { background-color: #deb2db; }
-  to { background-color: #fcf091; }
-}
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes disappear {
-  from { opacity: 1; background-color: #041541; }
-  to { opacity: 0; background-color: #cfecf7; }
-}
-/* Standard syntax */
-@keyframes disappear {
-  from { opacity: 1; background-color: #041541; }
-  to { opacity: 0; background-color: #cfecf7; }
 }

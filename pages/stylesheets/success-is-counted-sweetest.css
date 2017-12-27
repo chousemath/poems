@@ -8,40 +8,121 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
   background: transparent; }
 
-.main {
-  width: 80%;
-  max-width: 250px;
-  height: 60%;
-  max-height: 250px;
-  border-radius: 7px;
-  background-color: #041541;
-  position: relative;
-  overflow: hidden;
-  -webkit-animation: example 5s linear infinite alternate;
-  -moz-animation: example 5s linear infinite alternate;
-  -ms-animation: example 5s linear infinite alternate;
-  -o-animation: example 5s linear infinite alternate;
-  animation: example 5s linear infinite alternate;
-  /* this comes last */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   /* Safari 4.0 - 8.0 */
   /* Standard syntax */
   /* Safari 4.0 - 8.0 */
   /* Standard syntax */
   /* Safari 4.0 - 8.0 */
   /* Standard syntax */ }
-  .main .ocean {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background-color: #001c3c;
-    -webkit-animation: oceancolor 5s linear infinite alternate;
-    -moz-animation: oceancolor 5s linear infinite alternate;
-    -ms-animation: oceancolor 5s linear infinite alternate;
-    -o-animation: oceancolor 5s linear infinite alternate;
-    animation: oceancolor 5s linear infinite alternate;
-    /* this comes last */ }
+  .container .message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 255px;
+    height: 3em;
+    font-size: 1.2em;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+  .container .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 255px;
+    height: 3em; }
+    .container .icon-container .icon-image {
+      height: 3em; }
+  .container .main {
+    width: 80%;
+    max-width: 260px;
+    height: 60%;
+    max-height: 260px;
+    border-radius: 7px;
+    background-color: #041541;
+    position: relative;
+    overflow: hidden;
+    -webkit-animation: example 6.5s linear infinite alternate;
+    -moz-animation: example 6.5s linear infinite alternate;
+    -ms-animation: example 6.5s linear infinite alternate;
+    -o-animation: example 6.5s linear infinite alternate;
+    animation: example 6.5s linear infinite alternate;
+    /* this comes last */
+    /* Safari 4.0 - 8.0 */
+    /* Standard syntax */
+    /* Safari 4.0 - 8.0 */
+    /* Standard syntax */
+    /* Safari 4.0 - 8.0 */
+    /* Standard syntax */
+    /* Safari 4.0 - 8.0 */
+    /* Standard syntax */ }
+    .container .main .ocean {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 120%;
+      height: 40%;
+      background-color: #001c3c;
+      -webkit-animation: oceancolor 6.5s linear infinite alternate;
+      -moz-animation: oceancolor 6.5s linear infinite alternate;
+      -ms-animation: oceancolor 6.5s linear infinite alternate;
+      -o-animation: oceancolor 6.5s linear infinite alternate;
+      animation: oceancolor 6.5s linear infinite alternate;
+      /* this comes last */ }
+      .container .main .ocean .ocean-shift {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        -webkit-animation: oceanShift 3s linear infinite alternate;
+        -moz-animation: oceanShift 3s linear infinite alternate;
+        -ms-animation: oceanShift 3s linear infinite alternate;
+        -o-animation: oceanShift 3s linear infinite alternate;
+        animation: oceanShift 3s linear infinite alternate;
+        /* this comes last */ }
+        .container .main .ocean .ocean-shift .wave {
+          position: absolute;
+          width: 40px;
+          opacity: 0.2; }
+        .container .main .ocean .ocean-shift .wave-1 {
+          bottom: 67%;
+          left: 5%; }
+        .container .main .ocean .ocean-shift .wave-2 {
+          bottom: 11%;
+          left: 12%; }
+        .container .main .ocean .ocean-shift .wave-3 {
+          bottom: 41%;
+          left: 27%; }
+        .container .main .ocean .ocean-shift .wave-4 {
+          bottom: 61%;
+          left: 31%; }
+        .container .main .ocean .ocean-shift .wave-5 {
+          bottom: 22%;
+          left: 55%; }
+        .container .main .ocean .ocean-shift .wave-6 {
+          bottom: 55%;
+          left: 75%; }
+        .container .main .ocean .ocean-shift .wave-7 {
+          bottom: 37%;
+          left: 88%; }
+
+@-webkit-keyframes oceanShift {
+  from {
+    left: 0; }
+  to {
+    left: -10%; } }
+
+@keyframes oceanShift {
+  from {
+    left: 0; }
+  to {
+    left: -20%; } }
 
 @-webkit-keyframes oceancolor {
   from {
@@ -54,103 +135,119 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-color: #001c3c; }
   to {
     background-color: #0da5ce; } }
-  .main .moon-left {
-    position: absolute;
-    top: 18px;
-    left: 18px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color: #deb2db;
-    -webkit-animation: wobble 5s linear infinite alternate;
-    -moz-animation: wobble 5s linear infinite alternate;
-    -ms-animation: wobble 5s linear infinite alternate;
-    -o-animation: wobble 5s linear infinite alternate;
-    animation: wobble 5s linear infinite alternate;
-    /* this comes last */ }
-  .main .moon-right {
-    position: absolute;
-    top: 18px;
-    left: 38px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color: #041541;
-    -webkit-animation: example 5s linear infinite alternate;
-    -moz-animation: example 5s linear infinite alternate;
-    -ms-animation: example 5s linear infinite alternate;
-    -o-animation: example 5s linear infinite alternate;
-    animation: example 5s linear infinite alternate;
-    /* this comes last */ }
-  .main .moon-right-disappear {
-    -webkit-animation: disappear 5s linear infinite alternate;
-    -moz-animation: disappear 5s linear infinite alternate;
-    -ms-animation: disappear 5s linear infinite alternate;
-    -o-animation: disappear 5s linear infinite alternate;
-    animation: disappear 5s linear infinite alternate;
-    /* this comes last */ }
-  .main .star {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent; }
-  .main .star-1-up {
-    top: 20px;
-    right: 20px;
-    border-bottom: 10px solid #fcf091; }
-  .main .star-1-down {
-    top: 22.5px;
-    right: 20px;
-    border-top: 10px solid #fcf091; }
-  .main .star-2-up {
-    top: 35px;
-    right: 56px;
-    border-bottom: 10px solid #fcf091; }
-  .main .star-2-down {
-    top: 37.5px;
-    right: 56px;
-    border-top: 10px solid #fcf091; }
-  .main .star-3-up {
-    top: 50px;
-    right: 40px;
-    border-bottom: 10px solid #fcf091; }
-  .main .star-3-down {
-    top: 52.5px;
-    right: 40px;
-    border-top: 10px solid #fcf091; }
-  .main .star-4-up {
-    top: 40px;
-    right: 100px;
-    border-bottom: 10px solid #fcf091; }
-  .main .star-4-down {
-    top: 42.5px;
-    right: 100px;
-    border-top: 10px solid #fcf091; }
-  .main .star-5-up {
-    top: 70px;
-    right: 96px;
-    border-bottom: 10px solid #fcf091; }
-  .main .star-5-down {
-    top: 72.5px;
-    right: 96px;
-    border-top: 10px solid #fcf091; }
-  .main .star-6-up {
-    top: 60px;
-    right: 120px;
-    border-bottom: 10px solid #fcf091; }
-  .main .star-6-down {
-    top: 62.5px;
-    right: 120px;
-    border-top: 10px solid #fcf091; }
-  .main .star-7-up {
-    top: 86px;
-    right: 140px;
-    border-bottom: 10px solid #fcf091; }
-  .main .star-7-down {
-    top: 88.5px;
-    right: 140px;
-    border-top: 10px solid #fcf091; }
+    .container .main .moon-left {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+      background-color: #deb2db;
+      -webkit-animation: wobble 6.5s linear infinite alternate;
+      -moz-animation: wobble 6.5s linear infinite alternate;
+      -ms-animation: wobble 6.5s linear infinite alternate;
+      -o-animation: wobble 6.5s linear infinite alternate;
+      animation: wobble 6.5s linear infinite alternate;
+      /* this comes last */ }
+    .container .main .moon-right {
+      position: absolute;
+      top: 18px;
+      left: 38px;
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+      background-color: #041541;
+      -webkit-animation: example 6.5s linear infinite alternate;
+      -moz-animation: example 6.5s linear infinite alternate;
+      -ms-animation: example 6.5s linear infinite alternate;
+      -o-animation: example 6.5s linear infinite alternate;
+      animation: example 6.5s linear infinite alternate;
+      /* this comes last */ }
+    .container .main .moon-right-disappear {
+      -webkit-animation: disappear 6.5s linear infinite alternate;
+      -moz-animation: disappear 6.5s linear infinite alternate;
+      -ms-animation: disappear 6.5s linear infinite alternate;
+      -o-animation: disappear 6.5s linear infinite alternate;
+      animation: disappear 6.5s linear infinite alternate;
+      /* this comes last */ }
+    .container .main .star {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent; }
+    .container .main .star-1-up {
+      top: 20px;
+      right: 20px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-1-down {
+      top: 22.5px;
+      right: 20px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-2-up {
+      top: 35px;
+      right: 56px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-2-down {
+      top: 37.5px;
+      right: 56px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-3-up {
+      top: 50px;
+      right: 40px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-3-down {
+      top: 52.5px;
+      right: 40px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-4-up {
+      top: 40px;
+      right: 100px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-4-down {
+      top: 42.5px;
+      right: 100px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-5-up {
+      top: 70px;
+      right: 96px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-5-down {
+      top: 72.5px;
+      right: 96px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-6-up {
+      top: 60px;
+      right: 120px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-6-down {
+      top: 62.5px;
+      right: 120px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-7-up {
+      top: 86px;
+      right: 140px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-7-down {
+      top: 88.5px;
+      right: 140px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-8-up {
+      top: 55px;
+      right: 157px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-8-down {
+      top: 57.5px;
+      right: 157px;
+      border-top: 10px solid #fcf091; }
+    .container .main .star-9-up {
+      top: 100px;
+      right: 100px;
+      border-bottom: 10px solid #fcf091; }
+    .container .main .star-9-down {
+      top: 102.5px;
+      right: 100px;
+      border-top: 10px solid #fcf091; }
 
 @-webkit-keyframes starfadeup {
   from {
@@ -175,50 +272,45 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border-top: 10px solid #fcf091; }
   to {
     border-top: 0px solid transparent; } }
-  .main .starfadeup {
-    -webkit-animation: starfadeup 5s linear infinite alternate;
-    -moz-animation: starfadeup 5s linear infinite alternate;
-    -ms-animation: starfadeup 5s linear infinite alternate;
-    -o-animation: starfadeup 5s linear infinite alternate;
-    animation: starfadeup 5s linear infinite alternate;
-    /* this comes last */ }
-  .main .starfadedown {
-    -webkit-animation: starfadedown 5s linear infinite alternate;
-    -moz-animation: starfadedown 5s linear infinite alternate;
-    -ms-animation: starfadedown 5s linear infinite alternate;
-    -o-animation: starfadedown 5s linear infinite alternate;
-    animation: starfadedown 5s linear infinite alternate;
-    /* this comes last */ }
+    .container .main .starfadeup {
+      -webkit-animation: starfadeup 6.5s linear infinite alternate;
+      -moz-animation: starfadeup 6.5s linear infinite alternate;
+      -ms-animation: starfadeup 6.5s linear infinite alternate;
+      -o-animation: starfadeup 6.5s linear infinite alternate;
+      animation: starfadeup 6.5s linear infinite alternate;
+      /* this comes last */ }
+    .container .main .starfadedown {
+      -webkit-animation: starfadedown 6.5s linear infinite alternate;
+      -moz-animation: starfadedown 6.5s linear infinite alternate;
+      -ms-animation: starfadedown 6.5s linear infinite alternate;
+      -o-animation: starfadedown 6.5s linear infinite alternate;
+      animation: starfadedown 6.5s linear infinite alternate;
+      /* this comes last */ }
 
-/* Safari 4.0 - 8.0 */
 @-webkit-keyframes example {
   from {
     background-color: #041541; }
   to {
     background-color: #cfecf7; } }
 
-/* Standard syntax */
 @keyframes example {
   from {
     background-color: #041541; }
   to {
     background-color: #cfecf7; } }
 
-/* Safari 4.0 - 8.0 */
 @-webkit-keyframes wobble {
   from {
     background-color: #deb2db; }
   to {
     background-color: #fcf091; } }
 
-/* Standard syntax */
 @keyframes wobble {
   from {
     background-color: #deb2db; }
   to {
     background-color: #fcf091; } }
 
-/* Safari 4.0 - 8.0 */
 @-webkit-keyframes disappear {
   from {
     opacity: 1;
@@ -227,7 +319,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     opacity: 0;
     background-color: #cfecf7; } }
 
-/* Standard syntax */
 @keyframes disappear {
   from {
     opacity: 1;
