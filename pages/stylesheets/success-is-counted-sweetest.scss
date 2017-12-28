@@ -187,6 +187,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     $star9top: 100px;
     $star9right: 100px;
 
+    $star10top: 90px;
+    $star10right: 20px;
+
+    $star11top: 82px;
+    $star11right: 61px;
+
     .star {
       position: absolute;
       width: 0;
@@ -221,6 +227,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     .star-9-up { top: $star9top; right: $star9right; border-bottom: $starSize*2 solid $starColor; }
     .star-9-down { top: $star9top + 2.5px; right: $star9right; border-top: $starSize*2 solid $starColor; }
+
+    .star-10-up { top: $star10top; right: $star10right; border-bottom: $starSize*2 solid $starColor; }
+    .star-10-down { top: $star10top + 2.5px; right: $star10right; border-top: $starSize*2 solid $starColor; }
+
+    .star-11-up { top: $star11top; right: $star11right; border-bottom: $starSize*2 solid $starColor; }
+    .star-11-down { top: $star11top + 2.5px; right: $star11right; border-top: $starSize*2 solid $starColor; }
 
     /* Safari 4.0 - 8.0 */
     @-webkit-keyframes starfadeup {
