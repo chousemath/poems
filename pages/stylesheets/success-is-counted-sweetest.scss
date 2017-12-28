@@ -201,11 +201,23 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       border-right: $starSize solid transparent;
     }
 
+    $glowSize: $starSize*1.7;
+    .glow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: $glowSize solid $starColor;
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+
     .star-1-up { top: $star1top; right: $star1right; border-bottom: $starSize*2 solid $starColor; }
     .star-1-down { top: $star1top + 2.5px; right: $star1right; border-top: $starSize*2 solid $starColor; }
+    .glow-1 { top: $star1top - $glowSize*0.23; right: $star1right - $glowSize*0.4; }
 
     .star-2-up { top: $star2top; right: $star2right; border-bottom: $starSize*2 solid $starColor; }
     .star-2-down { top: $star2top + 2.5px; right: $star2right; border-top: $starSize*2 solid $starColor; }
+    .glow-2 { top: $star2top - $glowSize*0.23; right: $star2right - $glowSize*0.4; }
 
     .star-3-up { top: $star3top; right: $star3right; border-bottom: $starSize*2 solid $starColor; }
     .star-3-down { top: $star3top + 2.5px; right: $star3right; border-top: $starSize*2 solid $starColor; }
@@ -236,24 +248,43 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     /* Safari 4.0 - 8.0 */
     @-webkit-keyframes starfadeup {
-      from { border-bottom: 10px solid $starColor; }
-      to { border-bottom: 0px solid transparent; }
+      from { border-bottom: $starSize*2 solid $starColor; }
+      to { border-bottom: $starSize*2 solid transparent; }
     }
     /* Standard syntax */
     @keyframes starfadeup {
-      from { border-bottom: 10px solid $starColor; }
-      to { border-bottom: 0px solid transparent; }
+      from { border-bottom: $starSize*2 solid $starColor; }
+      to { border-bottom: $starSize*2 solid transparent; }
     }
 
     /* Safari 4.0 - 8.0 */
     @-webkit-keyframes starfadedown {
-      from { border-top: 10px solid $starColor; }
-      to { border-top: 0px solid transparent; }
+      from { border-top: $starSize*2 solid $starColor; }
+      to { border-top: $starSize*2 solid transparent; }
     }
     /* Standard syntax */
     @keyframes starfadedown {
-      from { border-top: 10px solid $starColor; }
-      to { border-top: 0px solid transparent; }
+      from { border-top: $starSize*2 solid $starColor; }
+      to { border-top: $starSize*2 solid transparent; }
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes glowFade {
+      from { border: $glowSize solid $starColor; }
+      to { border: $glowSize solid transparent; }
+    }
+    /* Standard syntax */
+    @keyframes glowFade {
+      from { border: $glowSize solid $starColor; }
+      to { border: $glowSize solid transparent; }
+    }
+
+    .glowfade {
+      -webkit-animation: glowFade $animationSpeedMain linear infinite alternate;
+      -moz-animation: glowFade $animationSpeedMain linear infinite alternate;
+      -ms-animation: glowFade $animationSpeedMain linear infinite alternate;
+      -o-animation: glowFade $animationSpeedMain linear infinite alternate;
+      animation: glowFade $animationSpeedMain linear infinite alternate; /* this comes last */
     }
 
     .starfadeup {

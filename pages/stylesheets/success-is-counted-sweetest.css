@@ -59,6 +59,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     /* Safari 4.0 - 8.0 */
     /* Standard syntax */
     /* Safari 4.0 - 8.0 */
+    /* Standard syntax */
+    /* Safari 4.0 - 8.0 */
     /* Standard syntax */ }
     .container .main .ocean {
       position: absolute;
@@ -176,6 +178,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       height: 0;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent; }
+    .container .main .glow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 8.5px solid #fcf091;
+      border-radius: 50%;
+      opacity: 0.3; }
     .container .main .star-1-up {
       top: 20px;
       right: 20px;
@@ -184,6 +193,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       top: 22.5px;
       right: 20px;
       border-top: 10px solid #fcf091; }
+    .container .main .glow-1 {
+      top: 18.045px;
+      right: 16.6px; }
     .container .main .star-2-up {
       top: 35px;
       right: 56px;
@@ -192,6 +204,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       top: 37.5px;
       right: 56px;
       border-top: 10px solid #fcf091; }
+    .container .main .glow-2 {
+      top: 33.045px;
+      right: 52.6px; }
     .container .main .star-3-up {
       top: 50px;
       right: 40px;
@@ -269,25 +284,44 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   from {
     border-bottom: 10px solid #fcf091; }
   to {
-    border-bottom: 0px solid transparent; } }
+    border-bottom: 10px solid transparent; } }
 
 @keyframes starfadeup {
   from {
     border-bottom: 10px solid #fcf091; }
   to {
-    border-bottom: 0px solid transparent; } }
+    border-bottom: 10px solid transparent; } }
 
 @-webkit-keyframes starfadedown {
   from {
     border-top: 10px solid #fcf091; }
   to {
-    border-top: 0px solid transparent; } }
+    border-top: 10px solid transparent; } }
 
 @keyframes starfadedown {
   from {
     border-top: 10px solid #fcf091; }
   to {
-    border-top: 0px solid transparent; } }
+    border-top: 10px solid transparent; } }
+
+@-webkit-keyframes glowFade {
+  from {
+    border: 8.5px solid #fcf091; }
+  to {
+    border: 8.5px solid transparent; } }
+
+@keyframes glowFade {
+  from {
+    border: 8.5px solid #fcf091; }
+  to {
+    border: 8.5px solid transparent; } }
+    .container .main .glowfade {
+      -webkit-animation: glowFade 6.5s linear infinite alternate;
+      -moz-animation: glowFade 6.5s linear infinite alternate;
+      -ms-animation: glowFade 6.5s linear infinite alternate;
+      -o-animation: glowFade 6.5s linear infinite alternate;
+      animation: glowFade 6.5s linear infinite alternate;
+      /* this comes last */ }
     .container .main .starfadeup {
       -webkit-animation: starfadeup 6.5s linear infinite alternate;
       -moz-animation: starfadeup 6.5s linear infinite alternate;
