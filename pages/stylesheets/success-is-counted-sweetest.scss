@@ -221,30 +221,39 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     .star-3-up { top: $star3top; right: $star3right; border-bottom: $starSize*2 solid $starColor; }
     .star-3-down { top: $star3top + 2.5px; right: $star3right; border-top: $starSize*2 solid $starColor; }
+    .glow-3 { top: $star3top - $glowSize*0.23; right: $star3right - $glowSize*0.4; }
 
     .star-4-up { top: $star4top; right: $star4right; border-bottom: $starSize*2 solid $starColor; }
     .star-4-down { top: $star4top + 2.5px; right: $star4right; border-top: $starSize*2 solid $starColor; }
+    .glow-4 { top: $star4top - $glowSize*0.23; right: $star4right - $glowSize*0.4; }
 
     .star-5-up { top: $star5top; right: $star5right; border-bottom: $starSize*2 solid $starColor; }
     .star-5-down { top: $star5top + 2.5px; right: $star5right; border-top: $starSize*2 solid $starColor; }
+    .glow-5 { top: $star5top - $glowSize*0.23; right: $star5right - $glowSize*0.4; }
 
     .star-6-up { top: $star6top; right: $star6right; border-bottom: $starSize*2 solid $starColor; }
     .star-6-down { top: $star6top + 2.5px; right: $star6right; border-top: $starSize*2 solid $starColor; }
+    .glow-6 { top: $star6top - $glowSize*0.23; right: $star6right - $glowSize*0.4; }
 
     .star-7-up { top: $star7top; right: $star7right; border-bottom: $starSize*2 solid $starColor; }
     .star-7-down { top: $star7top + 2.5px; right: $star7right; border-top: $starSize*2 solid $starColor; }
+    .glow-7 { top: $star7top - $glowSize*0.23; right: $star7right - $glowSize*0.4; }
 
     .star-8-up { top: $star8top; right: $star8right; border-bottom: $starSize*2 solid $starColor; }
     .star-8-down { top: $star8top + 2.5px; right: $star8right; border-top: $starSize*2 solid $starColor; }
+    .glow-8 { top: $star8top - $glowSize*0.23; right: $star8right - $glowSize*0.4; }
 
     .star-9-up { top: $star9top; right: $star9right; border-bottom: $starSize*2 solid $starColor; }
     .star-9-down { top: $star9top + 2.5px; right: $star9right; border-top: $starSize*2 solid $starColor; }
+    .glow-9 { top: $star9top - $glowSize*0.23; right: $star9right - $glowSize*0.4; }
 
     .star-10-up { top: $star10top; right: $star10right; border-bottom: $starSize*2 solid $starColor; }
     .star-10-down { top: $star10top + 2.5px; right: $star10right; border-top: $starSize*2 solid $starColor; }
+    .glow-10 { top: $star10top - $glowSize*0.23; right: $star10right - $glowSize*0.4; }
 
     .star-11-up { top: $star11top; right: $star11right; border-bottom: $starSize*2 solid $starColor; }
     .star-11-down { top: $star11top + 2.5px; right: $star11right; border-top: $starSize*2 solid $starColor; }
+    .glow-11 { top: $star11top - $glowSize*0.23; right: $star11right - $glowSize*0.4; }
 
     /* Safari 4.0 - 8.0 */
     @-webkit-keyframes starfadeup {
